@@ -11,6 +11,7 @@ mkdirSync(OUT, { recursive: true });
 const badges = [
   ["gitee", "Gitee", "开源", "#c71d23", "#8a1616", "开源代码：MIT", "开源项目：Gitee 仓库（MIT License）"],
   ["github", "GitHub", "开源", "#24292e", "#57606a", "GitHub 开源", "开源项目：GitHub 仓库（MIT License）"],
+  ["cnb", "CNB", "开源", "#0d47a1", "#1565c0", "CNB 开源", "开源项目：CNB 云原生构建仓库（MIT License）"],
   ["valid-html5", "W3C", "HTML5", "#005a9c", "#003366", "W3C HTML5: Valid", "W3C HTML5 标准校验：0 错误 0 警告"],
   ["valid-css", "W3C", "CSS3", "#005a9c", "#003366", "W3C CSS3: Valid", "W3C CSS 标准校验：通过"],
   ["ssl-a", "SSL TLS", "A", "#555", "#4c1", "SSL TLS: A", "SSL Labs TLS 配置评级：A"],
