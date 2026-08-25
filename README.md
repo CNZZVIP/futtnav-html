@@ -229,7 +229,16 @@ edgeone makers deploy --area global
 
 ## 📄 开源协议
 
-本项目基于 [MIT License](LICENSE) 开源，可自由使用、修改、商用。请保留版权声明。
+本项目基于 **MIT License** 开源（可自由使用、修改、商用，需保留版权声明），已通过以下开源认证与标准识别：
+
+[![OSI Approved](https://img.shields.io/badge/OSI_Approved-MIT-3DA639?style=for-the-badge)](https://opensource.org/license/mit)
+[![SPDX MIT](https://img.shields.io/badge/SPDX-MIT-blue?style=for-the-badge)](https://spdx.org/licenses/MIT.html)
+[![ChooseALicense](https://img.shields.io/badge/ChooseALicense-MIT-6e5494?style=for-the-badge)](https://choosealicense.com/licenses/mit/)
+
+- **OSI 认证**：MIT 是 Open Source Initiative（开源促进会）官方认证的开放源代码协议
+- **SPDX 标准标识**：SPDX ID 为 `MIT`，符合 SPDX 软件包数据交换国际标准
+- **平台自动识别**：GitHub / Gitee / CNB 三端仓库均已自动识别本仓库协议为 MIT（仓库首页显示 "MIT license" 标识）
+- **使用自由**：允许商用、修改、再分发，仅需保留版权声明与许可声明
 
 收录的网站均为公开互联网资源，版权归各自站点所有；本站仅做导航收录。
 
@@ -265,7 +274,7 @@ edgeone makers deploy --area global
 
 ### 协议 & 合规
 
-- **协议**：MIT，可自由使用、修改、商用，需保留版权声明（`LICENSE`）
+- **协议**：MIT（OSI 认证 / SPDX 标准标识），可自由使用、修改、商用，需保留版权声明（`LICENSE`）
 - **零依赖**：原生 HTML / CSS / JavaScript，无任何第三方运行时或构建依赖
 - **无追踪**：页面无第三方统计脚本；站外链接统一追加 `?source=hao.futt.cn` 便于统计引流
 - **安全默认**：所有外链使用 HTTPS；支持自定义 `SITE_URL` 生成 canonical / sitemap.xml
