@@ -1,0 +1,14 @@
+appname         = futtnav
+version         = 1.0.0
+display_name    = 福天天导航
+platform        = all
+maintainer      = FUTT.CN
+maintainer_url  = https://gitee.com/hiqw/futtnav-html
+distributor     = FUTT.CN
+distributor_url = https://gitee.com/hiqw/futtnav-html
+desktop_uidir   = ui
+desktop_applaunchname = futtnav.Application
+service_port    = 8080
+desc            = 开源网址导航 / 浏览器起始页（福天天导航）。支持自定义站点分组、置顶高亮、站点图标、多搜索引擎切换，开箱即用。基于 MIT 开源协议，源码：https://gitee.com/hiqw/futtnav-html
+source          = thirdparty
+checksum        = 

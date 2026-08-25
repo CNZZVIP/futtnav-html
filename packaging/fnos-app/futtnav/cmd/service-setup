@@ -1,0 +1,12 @@
+#!/bin/bash
+
+service_postinst() {
+    local www_dir="${TRIM_PKGVAR}/www"
+    mkdir -p "$www_dir" 2>/dev/null || true
+
+    # 将包内自带的静态站点文件部署到数据目录（只读挂载给 nginx 使用）
+    if [ -d "${TRIM_APPDEST}/www" ]; then
+        cp -rf "${TRIM_APPDEST}/www/." "$www_dir/" 2>/dev/null || true
+    fi
+    chmod -R a+r "$www_dir" 2>/dev/null || true
+}
