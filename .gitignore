@@ -17,3 +17,6 @@ Thumbs.db
 
 # 部署工具
 .edgeone/
+
+# 自动化测试/浏览器工具临时文件
+.playwright-cli/
