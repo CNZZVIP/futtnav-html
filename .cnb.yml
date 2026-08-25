@@ -1,31 +1,10 @@
-# ============================================================
-#   福天天导航 · 开源版 — CNB 容器镜像构建（云端验证 Dockerfile）
-#   ------------------------------------------------------------
-#   main 分支 push 时自动构建 Docker 镜像并推送 CNB 制品库，
-#   构建完成后在容器内做一次 HTTP 冒烟测试验证站点可访问。
-#   ============================================================
 main:
   push:
-    - services:
-        - docker
+    - docker:
+        image: node:22
       stages:
-        - name: set docker tag
-          script: echo -n "${CNB_DOCKER_REGISTRY}/${CNB_REPO_SLUG_LOWERCASE}:latest"
-          exports:
-            info: IMAGE_TAG
-        - name: docker build
-          script: docker build -t $IMAGE_TAG .
-        - name: add commit tag
-          script: docker tag $IMAGE_TAG ${CNB_DOCKER_REGISTRY}/${CNB_REPO_SLUG_LOWERCASE}:${CNB_COMMIT_SHORT}
-        - name: smoke test
+        - name: build
           script: |
-            docker run -d --name futtnav-test -p 8080:8080 $IMAGE_TAG
-            sleep 3
-            docker exec futtnav-test wget -qO- http://127.0.0.1:8080/ | grep -q 'friendship-links-container' \
-              && docker exec futtnav-test wget -qO- http://127.0.0.1:8080/robots.txt | grep -q 'User-agent' \
-              && echo "SMOKE TEST PASS" || exit 1
-            docker rm -f futtnav-test
-        - name: push image
-          script: |
-            docker push $IMAGE_TAG
-            docker push ${CNB_DOCKER_REGISTRY}/${CNB_REPO_SLUG_LOWERCASE}:${CNB_COMMIT_SHORT}
+            node scripts/build.mjs
+            echo "=== 构建产物 ==="
+            ls -la dist

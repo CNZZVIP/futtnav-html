@@ -63,7 +63,6 @@ async function call(url, method = 'GET', body) {
   }
 }
 
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const gitBuf = args => {
   const r = spawnSync('git', ['-C', ROOT, ...args]);
   if (r.status !== 0) throw new Error((r.stderr || 'git failed').toString());
