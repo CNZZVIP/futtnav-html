@@ -4,7 +4,10 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-**项目仓库**：<https://gitee.com/hiqw/futtnav-html>
+**项目仓库**（三端镜像，同步更新）：
+- **Gitee**：<https://gitee.com/hiqw/futtnav-html>
+- **GitHub**：<https://github.com/CNZZVIP/futtnav-html>
+- **CNB（腾讯云原生构建）**：<https://cnb.cool/futtcn/futtnav-html>
 
 ## 📖 项目简介
 
@@ -218,7 +221,11 @@ edgeone makers deploy --area global
 
 ## 🤝 贡献
 
-欢迎提交 Issue 与 Pull Request，贡献前请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
+欢迎提交 Issue 与 Pull Request，贡献前请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。三端仓库同步，任选其一提交即可：
+
+- **Gitee**：[gitee.com/hiqw/futtnav-html](https://gitee.com/hiqw/futtnav-html)
+- **GitHub**：[github.com/CNZZVIP/futtnav-html](https://github.com/CNZZVIP/futtnav-html)
+- **CNB（腾讯云原生构建）**：[cnb.cool/futtcn/futtnav-html](https://cnb.cool/futtcn/futtnav-html)
 
 ## 📄 开源协议
 
@@ -236,6 +243,8 @@ edgeone makers deploy --area global
 
 [![Gitee stars](https://gitee.com/hiqw/futtnav-html/badge/star.svg?theme=white)](https://gitee.com/hiqw/futtnav-html)
 [![Gitee forks](https://gitee.com/hiqw/futtnav-html/badge/fork.svg?theme=white)](https://gitee.com/hiqw/futtnav-html)
+[![GitHub stars](https://img.shields.io/github/stars/CNZZVIP/futtnav-html?style=social)](https://github.com/CNZZVIP/futtnav-html)
+[![GitHub forks](https://img.shields.io/github/forks/CNZZVIP/futtnav-html?style=social)](https://github.com/CNZZVIP/futtnav-html)
 [![CNB stars](https://cnb.cool/futtcn/futtnav-html/-/badge/star)](https://cnb.cool/futtcn/futtnav-html)
 [![CNB forks](https://cnb.cool/futtcn/futtnav-html/-/badge/fork)](https://cnb.cool/futtcn/futtnav-html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-1B9E55?style=for-the-badge)](LICENSE)
@@ -263,4 +272,4 @@ edgeone makers deploy --area global
 
 ---
 
-🐛 Bug 反馈 / ✨ 功能建议：[Gitee Issues](https://gitee.com/hiqw/futtnav-html/issues) · 📧 联系：5064895@qq.com
+🐛 Bug 反馈 / ✨ 功能建议：[Gitee Issues](https://gitee.com/hiqw/futtnav-html/issues) · [GitHub Issues](https://github.com/CNZZVIP/futtnav-html/issues) · [CNB Issues](https://cnb.cool/futtcn/futtnav-html/issues) · 📧 联系：5064895@qq.com
