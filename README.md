@@ -108,9 +108,9 @@ npm run preview    # 或 node scripts/serve.mjs，访问 http://localhost:4173/
 每个站点对象的字段：
 
 ```js
-{ name: "站点名称", url: "https://example.com" }        // 最简写法
-{ name: "重点站点", url: "https://example.com", highlight: true }  // 置顶高亮（金色描边）
-{ name: "特殊站点", url: "https://example.com", icon: "custom-icon" } // 覆盖默认 favicon 图标
+{ name: "站点名称", url: "https://hao.futt.cn" }        // 最简写法
+{ name: "重点站点", url: "https://hao.futt.cn", highlight: true }  // 置顶高亮（金色描边）
+{ name: "特殊站点", url: "https://hao.futt.cn", icon: "icon-fu" } // 覆盖默认 favicon 图标
 ```
 
 - `name`：必填，卡片显示文字
@@ -239,6 +239,7 @@ edgeone makers deploy --area global
 - **SPDX 标准标识**：SPDX ID 为 `MIT`，符合 SPDX 软件包数据交换国际标准
 - **平台自动识别**：GitHub / Gitee / CNB 三端仓库均已自动识别本仓库协议为 MIT（仓库首页显示 "MIT license" 标识）
 - **使用自由**：允许商用、修改、再分发，仅需保留版权声明与许可声明
+- **版权声明保护**：MIT 协议强制要求保留版权所有者（`FUTT.CN`）及其官网链接（`hao.futt.cn`）；本仓库构建脚本已内置版权完整性校验，删除或篡改版权声明将直接导致构建失败
 
 收录的网站均为公开互联网资源，版权归各自站点所有；本站仅做导航收录。
 
