@@ -39,7 +39,15 @@ node scripts/package-fpk.mjs [version]
 
 也可提交到第三方应用商店（如 conversun/fnos-apps，按该仓库规范附上本仓库 `packaging/fnos-app/futtnav/` 目录并提 PR）。
 
-## 二、通用 Docker Compose（适配其它 NAS 平台）
+## 二、Docker 镜像 + 通用 Compose（适配其它 NAS 平台）
+
+**官方镜像**（多架构 amd64/arm64，内置站点，一条命令运行）：
+
+```bash
+docker run -d --name futtnav -p 8080:8080 --restart unless-stopped ghcr.io/cnzzvip/futtnav:latest
+```
+
+源码 push GitHub main 后自动构建推送；详见 `docker/README.md`。
 
 `packaging/docker/` 提供了平台无关的 Docker Compose 编排，**支持所有带 Docker / Compose 的 NAS 与家庭服务器**：
 

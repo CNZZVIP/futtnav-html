@@ -1056,3 +1056,31 @@ footer { padding: 3rem 0 1.5rem }
   .logo-text { font-size: 1.75rem }
   .info-grid { grid-template-columns: 1fr }
 }
+/* 分享菜单（悬浮栏分享按钮弹出面板） */
+.share-menu { display: flex; flex-direction: column; gap: .25rem }
+.share-item {
+  display: flex; align-items: center; gap: .8rem;
+  padding: .65rem .75rem; border-radius: var(--radius);
+  cursor: pointer; font-size: 1.4rem; color: var(--text);
+  transition: var(--transition);
+}
+.share-item:hover { background: rgba(74, 140, 255, .12) }
+.share-dot {
+  width: 1.1rem; height: 1.1rem; border-radius: 50%; flex: none;
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.share-dot .icon { width: 1.3rem; height: 1.3rem; color: #fff; opacity: .95 }
+.dot-wechat { background: #07c160 }
+.dot-weibo { background: #e6162d }
+.dot-qzone { background: #fbbc05 }
+.dot-copy { background: #4a8cff }
+.dot-qrcode { background: #607d8b }
+.share-qrcode {
+  text-align: center; padding-top: 1rem; margin-top: .75rem;
+  border-top: 1px solid var(--border);
+}
+.share-qrcode img {
+  width: 16rem; height: 16rem; max-width: 100%;
+  border: 1px solid var(--border); border-radius: var(--radius);
+}
+.share-qrcode p { margin-top: .5rem; font-size: 1.2rem; opacity: .7 }
