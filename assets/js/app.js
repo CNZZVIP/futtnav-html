@@ -257,7 +257,9 @@ class NavManager {
       </a>`).join('');
   }
   bindEvents() {
-    document.getElementById('navTabsContainer').addEventListener('click', e => {
+    const c = document.getElementById('navTabsContainer');
+    if (!c) return;
+    c.addEventListener('click', e => {
       const t = e.target.closest('.nav-tab');
       if (t) {
         document.querySelectorAll('.nav-tab').forEach(x => x.classList.remove('active'));
@@ -278,6 +280,7 @@ class SidebarManager {
     this.items = null;
   }
   init() {
+    if (!this.container) return;
     this.render();
     this.bindEvents();
     this.setupScroll();
@@ -411,6 +414,33 @@ class ToolbarManager {
         </svg>
         <p style="margin-top:.5rem">链接已复制到剪贴板</p>
       </div>`);
+    this.panels.share = this.createPanel('sharePanel', '分享本页', `
+      <div class="share-menu">
+        <div class="share-item" data-share="wechat">
+          <span class="share-dot dot-wechat"><svg class="icon"><use xlink:href="#icon-weixin"></use></svg></span>
+          <span>微信</span>
+        </div>
+        <div class="share-item" data-share="weibo">
+          <span class="share-dot dot-weibo"><svg class="icon"><use xlink:href="#icon-weibo"></use></svg></span>
+          <span>微博</span>
+        </div>
+        <div class="share-item" data-share="qzone">
+          <span class="share-dot dot-qzone"><svg class="icon"><use xlink:href="#icon-tencent"></use></svg></span>
+          <span>QQ空间</span>
+        </div>
+        <div class="share-item" data-share="copy">
+          <span class="share-dot dot-copy"><svg class="icon"><use xlink:href="#icon-link"></use></svg></span>
+          <span>复制链接</span>
+        </div>
+        <div class="share-item" data-share="qrcode">
+          <span class="share-dot dot-qrcode"></span>
+          <span>二维码</span>
+        </div>
+      </div>
+      <div class="share-qrcode" hidden>
+        <img alt="本页二维码">
+        <p>用手机扫码打开本页</p>
+      </div>`);
   }
   createPanel(id, title, content) {
     const p = Utils.create('div', { id, class: 'toolbar-panel' }, `
@@ -431,21 +461,8 @@ class ToolbarManager {
       this.toggle(this.panels.category);
       this.initCategoryMenu();
     });
-    document.getElementById('copyLinkBtn').addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(location.href);
-        this.panels.copyTip.style.display = 'block';
-        setTimeout(() => this.panels.copyTip.style.display = 'none', 2000);
-      } catch {
-        const t = document.createElement('textarea');
-        t.value = location.href;
-        document.body.appendChild(t);
-        t.select();
-        document.execCommand('copy');
-        document.body.removeChild(t);
-        Utils.showToast('链接已复制');
-      }
-    });
+    document.getElementById('shareBtn').addEventListener('click', () => this.toggle(this.panels.share));
+    this.initShareMenu();
     document.addEventListener('click', e => {
       if (!e.target.closest('.toolbar') && !e.target.closest('.toolbar-panel')) {
         Object.values(this.panels).forEach(p => p.style.display = 'none');
@@ -466,6 +483,49 @@ class ToolbarManager {
         this.panels.category.style.display = 'none';
       });
     });
+  }
+  initShareMenu() {
+    this.panels.share.querySelectorAll('.share-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const type = item.dataset.share;
+        const title = document.title;
+        const url = location.href;
+        if (type === 'wechat') {
+          // 微信无网页分享接口，自动复制「标题+链接」供用户粘贴发送
+          this.copyText(`${title}\n${url}`);
+          Utils.showToast('已复制标题+链接，去微信粘贴即可');
+        } else if (type === 'weibo') {
+          window.open(`https://service.weibo.com/share/share.php?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`, '_blank', 'noopener');
+        } else if (type === 'qzone') {
+          window.open(`https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`, '_blank', 'noopener');
+        } else if (type === 'copy') {
+          this.copyText(url);
+          this.panels.copyTip.style.display = 'block';
+          setTimeout(() => this.panels.copyTip.style.display = 'none', 2000);
+        } else if (type === 'qrcode') {
+          const qr = this.panels.share.querySelector('.share-qrcode');
+          const img = qr.querySelector('img');
+          if (qr.hidden) {
+            img.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&margin=8&data=${encodeURIComponent(url)}`;
+            qr.hidden = false;
+          } else {
+            qr.hidden = true;
+          }
+        }
+      });
+    });
+  }
+  async copyText(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const t = document.createElement('textarea');
+      t.value = text;
+      document.body.appendChild(t);
+      t.select();
+      document.execCommand('copy');
+      document.body.removeChild(t);
+    }
   }
   toggle(p) {
     Object.values(this.panels).forEach(x => x.style.display = 'none');

@@ -60,7 +60,11 @@ try { ghMain = (await call(`${API}/repos/${OWNER}/${REPO}/git/ref/heads/main`)).
 console.log(`gh main: ${ghMain ? ghMain.slice(0, 7) : 'none(新仓库)'}`);
 
 // 2. 本地 HEAD 全量文件（ls-tree -z 防路径转义）
-const ls = gitBuf(['ls-tree', '-r', '-z', 'HEAD']).toString('utf8').split('\0').filter(Boolean);
+//    注意：跳过 .github/ 目录——GitHub 安全机制要求写入该目录的 token 必须带
+//    workflow scope；没有该权限的 token 会被 Git 与 Git Data API 双重拒绝，
+//    因此 CI 文件（.github/workflows）在拿到带 workflow 权限的 token 前不入 GitHub 镜像。
+const ls = gitBuf(['ls-tree', '-r', '-z', 'HEAD']).toString('utf8').split('\0').filter(Boolean)
+  .filter(l => !l.includes('\t.github/'));
 const HEAD_MSG = gitBuf(['log', '-1', '--format=%s%n%n%b', 'HEAD']).toString('utf8').trim();
 console.log(`files: ${ls.length}`);
 
