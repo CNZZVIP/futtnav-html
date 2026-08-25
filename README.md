@@ -187,8 +187,16 @@ edgeone makers deploy --area global
 
 - **Vercel**：Framework Preset 选 Other，Build Command `node scripts/build.mjs`，Output Directory `dist`
 - **Netlify**：Build Command `node scripts/build.mjs`，Publish Directory `dist`
-- **GitHub Pages / Cloudflare Pages**：发布 `dist/` 目录
+- **GitHub Pages**：`GITHUB_TOKEN=ghp_xxx node scripts/deploy-gh-pages.mjs` 自动构建并发布到 `gh-pages` 分支
+- **Cloudflare Pages**：发布 `dist/` 目录
 - **任意 Nginx / 对象存储静态托管**：上传 `dist/` 即可
+
+### NAS 应用中心打包（供其它用户一键安装）
+
+- **飞牛 fnOS**：`node scripts/package-fpk.mjs` 生成 `.fpk` 安装包，可在应用中心手动安装或提交到飞牛应用开放平台
+- **通用 Docker Compose**：`packaging/docker/` 适配飞牛 / 绿联 / 极空间 / 群晖 / 威联通 / CasaOS / Unraid / TrueNAS 等所有支持 Docker 的平台
+
+详细说明见 [`packaging/README.md`](packaging/README.md)。
 
 ## 🔍 SEO 说明
 
