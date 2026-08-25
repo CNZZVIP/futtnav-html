@@ -1,0 +1,7 @@
+{
+  "$comment": "EdgeOne Makers Pages 一键部署配置。push 到 Git 仓库即自动构建上线；也可用 edgeone makers deploy 手动部署。",
+  "buildCommand": "node scripts/build.mjs",
+  "outputDirectory": "dist",
+  "nodeVersion": "22.11.0",
+  "installCommand": ""
+}
