@@ -14,10 +14,26 @@
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { readFileSync } from 'node:fs';
 
-const token = process.argv[2] || process.env.GITHUB_TOKEN;
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+
+// 令牌优先级：命令行参数 > 环境变量 > 统一令牌库 .tokens.json（GitHub 令牌统一管理，不再每次新创建）
+function loadToken() {
+  if (process.argv[2]) return process.argv[2];
+  if (process.env.GITHUB_TOKEN) return process.env.GITHUB_TOKEN;
+  try {
+    const store = JSON.parse(readFileSync(join(ROOT, '.tokens.json'), 'utf8'));
+    if (store?.github?.token) {
+      console.log(`令牌来源：.tokens.json（${store.github.name || 'github'}）`);
+      return store.github.token;
+    }
+  } catch { /* 令牌库不存在时走报错 */ }
+  return null;
+}
+const token = loadToken();
 if (!token) {
-  console.error('用法：node scripts/sync-github.mjs <ghp_token>  或设置环境变量 GITHUB_TOKEN');
+  console.error('未找到令牌：请传参 <ghp_token>、设置 GITHUB_TOKEN，或把令牌写入 .tokens.json（见 .tokens.example.json）');
   process.exit(1);
 }
 const OWNER = 'CNZZVIP';
@@ -60,11 +76,9 @@ try { ghMain = (await call(`${API}/repos/${OWNER}/${REPO}/git/ref/heads/main`)).
 console.log(`gh main: ${ghMain ? ghMain.slice(0, 7) : 'none(新仓库)'}`);
 
 // 2. 本地 HEAD 全量文件（ls-tree -z 防路径转义）
-//    注意：跳过 .github/ 目录——GitHub 安全机制要求写入该目录的 token 必须带
-//    workflow scope；没有该权限的 token 会被 Git 与 Git Data API 双重拒绝，
-//    因此 CI 文件（.github/workflows）在拿到带 workflow 权限的 token 前不入 GitHub 镜像。
-const ls = gitBuf(['ls-tree', '-r', '-z', 'HEAD']).toString('utf8').split('\0').filter(Boolean)
-  .filter(l => !l.includes('\t.github/'));
+//    含 .github/workflows——本工具令牌要求带 workflow scope（统一令牌库 Ai-Pro 已具备），
+//    push 到 main 后会自动触发 GitHub Actions 构建。
+const ls = gitBuf(['ls-tree', '-r', '-z', 'HEAD']).toString('utf8').split('\0').filter(Boolean);
 const HEAD_MSG = gitBuf(['log', '-1', '--format=%s%n%n%b', 'HEAD']).toString('utf8').trim();
 console.log(`files: ${ls.length}`);
 
