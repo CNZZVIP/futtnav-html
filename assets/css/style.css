@@ -817,6 +817,7 @@ footer { padding: 3rem 0 1.5rem }
 .badge-richresults:hover { color: #00b3a4 }
 .badge-pagespeed:hover { color: #4285f4 }
 .badge-gitee:hover { color: #c71d23 }
+.badge-github:hover { color: #24292e }
 
 /* ============================================================
    工具栏（全站统一）
