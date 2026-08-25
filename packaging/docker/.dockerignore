@@ -1,0 +1,14 @@
+# 排除项：不进入构建上下文，减少镜像层与上传体积
+.git
+.gitignore
+.github
+node_modules
+dist
+data
+*.zip
+*.fpk
+packaging/fnos-app
+packaging/futtnav-*.fpk
+LICENSE
+README.md
+package-lock.json
