@@ -1,4 +1,4 @@
-# 福天天导航 · 开源演示版
+# 福天天导航 · 开源版
 
 > 安全 · 实用 · 高效 的网址导航 —— 纯 HTML / CSS / JavaScript 实现，无后台、零依赖，开箱即用。
 
@@ -11,13 +11,13 @@
 
 ## 📖 项目简介
 
-福天天导航开源演示版是 [福天天导航](https://hao.futt.cn) 的**完全静态开源版本**。整个站点由原生 HTML / CSS / JavaScript 编写，不依赖任何框架、打包器或后端服务；构建产物是纯静态文件，部署到任意静态托管平台即可运行，甚至可直接双击 `dist/index.html` 本地打开。
+福天天导航开源版是 [福天天导航](https://hao.futt.cn) 的**完全静态开源版本**。整个站点由原生 HTML / CSS / JavaScript 编写，不依赖任何框架、打包器或后端服务；构建产物是纯静态文件，部署到任意静态托管平台即可运行，甚至可直接双击 `dist/index.html` 本地打开。
 
 - **适合谁**：个人浏览器起始页 · 团队内部导航页 · 站长快速搭建导航站 · 前端学习者参考项目
-- **与正式版的关系**：本项目是正式版的「精简演示」，不含在线后台管理、AI 智能助手等动态能力；演示站所有广告位统一为正式版引流
+- **与正式版的关系**：本项目是正式版的「精简开源版」，不含在线后台管理、AI 智能助手等动态能力；开源版所有广告位统一为正式版引流
 - **为什么开源**：提供一个结构清晰、可自由定制、零部署成本、SEO 友好的导航站实现，供社区复用与改进
 
-> **在线演示**（本项目）：→ [nav.futt.cn](https://nav.futt.cn)
+> **在线访问**（本项目）：→ [nav.futt.cn](https://nav.futt.cn)
 >
 > **正式版**：功能完整（收录 2000+ 精选网站 · 在线后台管理 · AI 智能助手）→ [hao.futt.cn](https://hao.futt.cn)
 
@@ -152,7 +152,7 @@ npm run preview    # 或 node scripts/serve.mjs，访问 http://localhost:4173/
 
 ## 🧭 广告位说明
 
-本项目是演示站，**广告位均为正式版引流**，不包含任何第三方广告（无 Google AdSense / 联盟广告）。
+本项目为开源版，**广告位均为正式版引流**，不包含任何第三方广告（无 Google AdSense / 联盟广告）。
 
 顶部横幅、中部卡片、正文穿插条、底部大横幅、页脚 CTA，全部为**正式版引流**，统一指向 <https://hao.futt.cn>：
 
@@ -172,7 +172,7 @@ npm run preview    # 或 node scripts/serve.mjs，访问 http://localhost:4173/
    - 构建命令：`node scripts/build.mjs`
    - 输出目录：`dist`
 4. 在项目的「环境变量」中配置：
-   - `SITE_URL`：你的演示站域名（如 `https://nav.futt.cn`），用于生成 canonical、sitemap.xml
+   - `SITE_URL`：你的开源版站点域名（如 `https://nav.futt.cn`），用于生成 canonical、sitemap.xml
 5. 绑定自定义域名，访问即上线；之后每次 `git push` 自动重新构建部署
 
 ### 方式二：CLI 手动部署

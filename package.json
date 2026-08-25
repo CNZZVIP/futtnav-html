@@ -1,7 +1,7 @@
 {
   "name": "futtnav-html",
   "version": "1.0.0",
-  "description": "福天天导航开源演示版 —— 纯 HTML/CSS/JavaScript 实现的网址导航站（无后台、零依赖、开箱即用），模板化构建全站统一头尾，内置 SEO（独立 meta/OG/JSON-LD/robots/sitemap），一键部署 EdgeOne Makers / Vercel / Netlify，演示站广告位为正式版 hao.futt.cn 引流，可作为个人起始页、团队导航页或学习参考。",
+  "description": "福天天导航开源版 —— 纯 HTML/CSS/JavaScript 实现的网址导航站（无后台、零依赖、开箱即用，MIT 协议），模板化构建全站统一头尾，内置 SEO（独立 meta/OG/JSON-LD/robots/sitemap），一键部署 EdgeOne Makers / Vercel / Netlify / Docker，可作为个人起始页、团队导航页或学习参考。",
   "type": "module",
   "private": false,
   "license": "MIT",
