@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="20" viewBox="0 0 88 20" role="img" aria-label="GitHub 开源">
+  <title>开源项目：GitHub 仓库（MIT License）</title>
+  <clipPath id="c"><rect width="88" height="20" rx="3"/></clipPath>
+  <g clip-path="url(#c)">
+    <rect width="54" height="20" fill="#24292e"/>
+    <rect x="54" width="34" height="20" fill="#57606a"/>
+  </g>
+  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11">
+    <text x="27" y="14">GitHub</text>
+    <text x="71" y="14">开源</text>
+  </g>
+</svg>

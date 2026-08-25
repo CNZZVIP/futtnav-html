@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="73" height="20" viewBox="0 0 73 20" role="img" aria-label="W3C CSS3: Valid">
+  <title>W3C CSS 标准校验：通过</title>
+  <clipPath id="c"><rect width="73" height="20" rx="3"/></clipPath>
+  <g clip-path="url(#c)">
+    <rect width="33" height="20" fill="#005a9c"/>
+    <rect x="33" width="40" height="20" fill="#003366"/>
+  </g>
+  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11">
+    <text x="16" y="14">W3C</text>
+    <text x="53" y="14">CSS3</text>
+  </g>
+</svg>
