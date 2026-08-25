@@ -29,6 +29,20 @@ const siteConfig = JSON.parse(readFileSync(join(SRC, 'site.config.json'), 'utf8'
 // EdgeOne 构建环境变量优先
 if (process.env.SITE_URL) siteConfig.siteUrl = process.env.SITE_URL;
 
+// ---------- MIT 版权保护校验 ----------
+// MIT 许可证（LICENSE 第 1 条）强制要求保留版权声明；删除/篡改版权所有者（FUTT.CN）
+// 或其官网链接（hao.futt.cn）将直接导致构建失败，避免在不知情的情况下违反开源协议。
+const CR_FUTT = 'FUTT.CN';
+const CR_LINK = 'hao.futt.cn';
+if (!siteConfig.copyright || !siteConfig.copyright.includes(CR_FUTT) || !siteConfig.copyright.includes(CR_LINK)) {
+  console.error(
+    '\n[版权保护] 构建终止：请勿删除或篡改 MIT 版权声明。\n' +
+    'MIT 开源协议（LICENSE）强制要求保留版权所有者（FUTT.CN）及其官网链接（hao.futt.cn），\n' +
+    '否则属于违反开源协议的行为。\n'
+  );
+  process.exit(1);
+}
+
 // ---------- 读取公共模板 ----------
 const partials = {
   head: readFileSync(join(PARTIALS, 'head.html'), 'utf8'),

@@ -3,7 +3,7 @@
   "siteSlogan": "安全 · 实用 · 高效 的网站导航",
   "siteUrl": "https://nav.futt.cn",
   "officialUrl": "https://hao.futt.cn",
-  "copyright": "© 2019 - 2026 FUTT.CN",
+  "copyright": "© 2019 - <span id=\"copy-year\">2026</span> <a href=\"https://hao.futt.cn\" target=\"_blank\" rel=\"noopener\">FUTT.CN</a>",
   "icp": "皖ICP备2023007181号",
   "lang": "zh-CN",
   "themeColor": "#4a8cff"

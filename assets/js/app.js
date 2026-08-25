@@ -602,5 +602,12 @@ class App {
   }
 }
 
+// 版权年份自动更新：纯静态环境通过浏览器本地时间动态显示当前年份，跨年自动更新，无需重新构建
+// 版权声明（FUTT.CN）受 MIT 开源协议保护，保留版权是协议强制条款，请勿删除或篡改
+(function initCopyrightYear() {
+  const el = document.getElementById('copy-year');
+  if (el) el.textContent = String(new Date().getFullYear());
+})();
+
 // 初始化
 document.addEventListener('DOMContentLoaded', () => new App().init());
