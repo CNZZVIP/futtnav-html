@@ -1,0 +1,32 @@
+{
+  "name": "futtnav-html",
+  "version": "1.0.0",
+  "description": "福天天导航开源演示版 —— 纯 HTML/CSS/JavaScript 实现的网址导航站（无后台、零依赖、开箱即用），模板化构建全站统一头尾，内置 SEO（独立 meta/OG/JSON-LD/robots/sitemap），一键部署 EdgeOne Makers / Vercel / Netlify，演示站广告位为正式版 hao.futt.cn 引流，可作为个人起始页、团队导航页或学习参考。",
+  "type": "module",
+  "private": false,
+  "license": "MIT",
+  "keywords": [
+    "navigation",
+    "navsite",
+    "网址导航",
+    "纯HTML",
+    "静态站",
+    "EdgeOne"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/hiqw/futtnav-html.git"
+  },
+  "author": "FUTT.CN <https://hao.futt.cn>"
+}

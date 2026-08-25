@@ -1,0 +1,71 @@
+<header>
+  <div class="container">
+    <div class="header-top">
+      <a class="logo" href="index.html" title="福天天导航首页">
+        <img src="favicon.svg" alt="福天天导航 Logo">
+        <div>
+          <div class="logo-text">福天天导航</div>
+          <div class="logo-desc">安全 · 实用 · 高效 的网站导航</div>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" data-nav="home" href="index.html">首页</a>
+        <a class="nav-link" data-nav="help" href="help.html">使用帮助</a>
+        <a class="nav-link" data-nav="privacy" href="privacy.html">隐私政策</a>
+        <a class="nav-link" data-nav="about" href="about.html">关于我们</a>
+      </nav>
+      <a class="btn-official" href="https://hao.futt.cn" target="_blank" rel="noopener" title="访问福天天导航正式版">访问正式版</a>
+    </div>
+
+    <!-- 搜索区（桌面端）：引擎切换 + 关键词输入，输入时自动联想本站收录站点 -->
+    <div class="search-container">
+      <div class="search-box">
+        <input class="search-input" placeholder="输入关键词搜索" aria-label="搜索">
+        <button class="search-btn" aria-label="搜索">
+          <svg class="icon"><use xlink:href="#icon-search"></use></svg>
+        </button>
+      </div>
+      <div class="search-engines">
+        <div class="search-engine active" data-engine="baidu">
+          <svg class="icon"><use xlink:href="#icon-baidu"></use></svg>百度
+        </div>
+        <div class="search-engine" data-engine="bing">
+          <svg class="icon"><use xlink:href="#icon-bing"></use></svg>必应
+        </div>
+        <div class="search-engine" data-engine="360">
+          <svg class="icon"><use xlink:href="#icon-so360"></use></svg>360
+        </div>
+        <div class="search-engine" data-engine="google">
+          <svg class="icon"><use xlink:href="#icon-google"></use></svg>谷歌
+        </div>
+      </div>
+    </div>
+
+    <!-- 搜索区（移动端）：同样支持站内联想 -->
+    <div class="mobile-search">
+      <div class="mobile-search-box">
+        <div class="mobile-search-engine" id="mobileSearchEngine" title="切换搜索引擎">
+          <svg class="icon"><use xlink:href="#icon-baidu"></use></svg>
+        </div>
+        <input class="mobile-search-input" placeholder="输入关键词搜索" aria-label="搜索">
+        <button class="mobile-search-btn" aria-label="搜索">
+          <svg class="icon"><use xlink:href="#icon-search"></use></svg>
+        </button>
+        <div class="mobile-search-engines" id="mobileSearchEngines">
+          <div class="mobile-engine-option active" data-engine="baidu">
+            <span class="mobile-engine-icon"><svg class="icon"><use xlink:href="#icon-baidu"></use></svg></span>百度
+          </div>
+          <div class="mobile-engine-option" data-engine="bing">
+            <span class="mobile-engine-icon"><svg class="icon"><use xlink:href="#icon-bing"></use></svg></span>必应
+          </div>
+          <div class="mobile-engine-option" data-engine="360">
+            <span class="mobile-engine-icon"><svg class="icon"><use xlink:href="#icon-so360"></use></svg></span>360
+          </div>
+          <div class="mobile-engine-option" data-engine="google">
+            <span class="mobile-engine-icon"><svg class="icon"><use xlink:href="#icon-google"></use></svg></span>谷歌
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
