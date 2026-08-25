@@ -549,6 +549,28 @@ class HeaderManager {
   }
 }
 
+// 认证徽章管理器：页脚质量认证徽章按当前站点域名填充各验证服务的专属链接
+// （HTML5/CSS/SSL/TLS/Security Headers/HSTS/Rich Results/PageSpeed）
+class BadgesManager {
+  init() {
+    const host = location.hostname;
+    const site = encodeURIComponent(location.origin + '/');
+    const links = {
+      html5: 'https://validator.w3.org/nu/?doc=' + site,
+      css: 'https://jigsaw.w3.org/css-validator/validator?uri=' + site,
+      ssl: 'https://www.ssllabs.com/ssltest/analyze.html?d=' + host,
+      security: 'https://securityheaders.com/?q=' + host,
+      hsts: 'https://hstspreload.org/?domain=' + host,
+      richresults: 'https://search.google.com/test/rich-results?url=' + site,
+      pagespeed: 'https://pagespeed.web.dev/analysis?url=' + site
+    };
+    document.querySelectorAll('.footer-badges .badge').forEach(function (b) {
+      const u = links[b.dataset.badge];
+      if (u) b.href = u;
+    });
+  }
+}
+
 class App {
   constructor() {
     this.modules = {
@@ -557,12 +579,14 @@ class App {
       sidebar: new SidebarManager(),
       theme: new ThemeManager(),
       toolbar: new ToolbarManager(),
-      header: new HeaderManager()
+      header: new HeaderManager(),
+      badges: new BadgesManager()
     };
   }
   init() {
     this.modules.theme.init();
     this.modules.header.init();
+    this.modules.badges.init();
     this.modules.search.init();
     this.modules.nav.init();
     ContentRenderer.render();

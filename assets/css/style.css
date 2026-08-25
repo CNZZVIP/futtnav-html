@@ -61,6 +61,7 @@ body {
 .btn-primary { background: var(--primary); color: #fff; border-radius: 50% }
 .btn-primary:hover { background: var(--primary-hover); transform: scale(1.08) }
 .icon { width: 1.25em; height: 1.25em; vertical-align: -.15em; fill: currentColor; overflow: hidden }
+.icon-primary { color: var(--primary) }
 .char-icon { font-family: system-ui, sans-serif; font-weight: bold }
 a { color: var(--primary); text-decoration: none; transition: var(--transition) }
 
@@ -771,6 +772,50 @@ footer { padding: 3rem 0 1.5rem }
   transition: var(--transition)
 }
 .icp-link:hover { color: var(--text) }
+
+/* ============================================================
+   站点质量认证徽章（页脚最底部）
+   ============================================================ */
+.footer-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  padding-top: 1rem;
+  margin-top: 1.25rem;
+  border-top: 1px solid var(--border)
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .375rem;
+  padding: .375rem .75rem;
+  font-size: .75rem;
+  line-height: 1;
+  text-decoration: none;
+  color: var(--text-secondary);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  transition: transform .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease
+}
+.badge:hover {
+  color: var(--text);
+  border-color: currentColor;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .08)
+}
+.badge-icon { width: 1rem; height: 1rem }
+.badge-icon path:first-child { fill: currentColor; stroke: none }
+.badge-icon path:last-child { fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round }
+.badge-html5:hover { color: #e44d26 }
+.badge-css:hover { color: #264de4 }
+.badge-ssl:hover { color: #2e8b57 }
+.badge-security:hover { color: #d9534f }
+.badge-hsts:hover { color: #7b61ff }
+.badge-richresults:hover { color: #00b3a4 }
+.badge-pagespeed:hover { color: #4285f4 }
 
 /* ============================================================
    工具栏（全站统一）
