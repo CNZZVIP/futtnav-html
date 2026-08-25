@@ -1,4 +1,4 @@
-# 福天天导航 · 开源演示版
+# 福天天导航 · 开源版
 
 > 安全 · 实用 · 高效 的网址导航 —— 纯 HTML / CSS / JavaScript 实现，无后台、零依赖，开箱即用。
 
@@ -11,13 +11,13 @@
 
 ## 📖 项目简介
 
-福天天导航开源演示版是 [福天天导航](https://hao.futt.cn) 的**完全静态开源版本**。整个站点由原生 HTML / CSS / JavaScript 编写，不依赖任何框架、打包器或后端服务；构建产物是纯静态文件，部署到任意静态托管平台即可运行，甚至可直接双击 `dist/index.html` 本地打开。
+福天天导航开源版是 [福天天导航](https://hao.futt.cn) 的**完全静态开源版本**。整个站点由原生 HTML / CSS / JavaScript 编写，不依赖任何框架、打包器或后端服务；构建产物是纯静态文件，部署到任意静态托管平台即可运行，甚至可直接双击 `dist/index.html` 本地打开。
 
 - **适合谁**：个人浏览器起始页 · 团队内部导航页 · 站长快速搭建导航站 · 前端学习者参考项目
-- **与正式版的关系**：本项目是正式版的「精简演示」，不含在线后台管理、AI 智能助手等动态能力；演示站所有广告位统一为正式版引流
+- **与正式版的关系**：本项目是正式版的「精简开源版」，不含在线后台管理、AI 智能助手等动态能力；开源版所有广告位统一为正式版引流
 - **为什么开源**：提供一个结构清晰、可自由定制、零部署成本、SEO 友好的导航站实现，供社区复用与改进
 
-> **在线演示**（本项目）：→ [nav.futt.cn](https://nav.futt.cn)
+> **在线访问**（本项目）：→ [nav.futt.cn](https://nav.futt.cn)
 >
 > **正式版**：功能完整（收录 2000+ 精选网站 · 在线后台管理 · AI 智能助手）→ [hao.futt.cn](https://hao.futt.cn)
 
@@ -33,7 +33,7 @@
 - **工具栏** —— 天气、分类速达、复制链接、返回顶部
 - **SEO 友好** —— 每页独立 meta / Open Graph / Twitter Card / JSON-LD 结构化数据，构建自动生成 robots.txt 与 sitemap.xml
 - **吸顶头部 + 站内联想** —— 头部含搜索框整条吸顶固定，输入关键词自动联想本站收录站点
-- **一键部署** —— 内置 EdgeOne Makers 配置，推送到 Git 仓库即自动构建上线；产物兼容 Vercel / Netlify / 任意静态托管
+- **一键部署** —— 内置 EdgeOne Makers 配置，推送到 Git 仓库即自动构建上线；产物兼容 Vercel / Netlify / GitHub Pages / 腾讯云 COS / 阿里云 OSS 等**任意静态空间**，不依赖任何后端
 
 ## 📁 目录结构
 
@@ -91,7 +91,7 @@ npm run preview    # 或 node scripts/serve.mjs，访问 http://localhost:4173/
 | `siteName` | 站点名称，用于页面标题、Logo 文字 |
 | `siteSlogan` | 站点标语，显示在头部副标题 |
 | `siteUrl` | 站点正式域名（如 `https://nav.futt.cn`），用于 canonical 与 sitemap.xml |
-| `officialUrl` | 正式版地址，头部「访问正式版」按钮与页脚 CTA 的引流目标 |
+| `officialUrl` | 正式版地址，页脚 CTA / 广告位的引流目标 |
 | `copyright` | 页脚版权声明 |
 | `icp` | ICP 备案号（预留字段，当前模板未渲染；如需展示请在 `footer.html` 中自行输出） |
 | `lang` | 页面语言，写入 `<html lang>` 与 meta |
@@ -131,7 +131,7 @@ npm run preview    # 或 node scripts/serve.mjs，访问 http://localhost:4173/
 | 模板 | 作用 |
 |---|---|
 | `partials/head.html` | `<head>`：meta / OG / JSON-LD / 资源引用，模板变量 `%%SITE%%`、`%%TITLE%%`、`%%DESC%%`、`%%KEYWORDS%%`、`%%NAV%%`、`%%JSONLD%%`、`%%CANONICAL%%` |
-| `partials/header.html` | 全站统一头部（Logo / 搜索区 / 导航 / 引流按钮） |
+| `partials/header.html` | 全站统一头部（Logo / 搜索区 / 开源导航链接） |
 | `partials/footer.html` | 全站统一页脚（版权 / 链接 / CTA），模板变量 `%%COPYRIGHT%%`、`%%VERSION%%` |
 
 页面文件顶部通过 `@` 注释声明元数据：
@@ -152,7 +152,7 @@ npm run preview    # 或 node scripts/serve.mjs，访问 http://localhost:4173/
 
 ## 🧭 广告位说明
 
-本项目是演示站，**广告位均为正式版引流**，不包含任何第三方广告（无 Google AdSense / 联盟广告）。
+本项目为开源版，**广告位均为正式版引流**，不包含任何第三方广告（无 Google AdSense / 联盟广告）。
 
 顶部横幅、中部卡片、正文穿插条、底部大横幅、页脚 CTA，全部为**正式版引流**，统一指向 <https://hao.futt.cn>：
 
@@ -172,7 +172,7 @@ npm run preview    # 或 node scripts/serve.mjs，访问 http://localhost:4173/
    - 构建命令：`node scripts/build.mjs`
    - 输出目录：`dist`
 4. 在项目的「环境变量」中配置：
-   - `SITE_URL`：你的演示站域名（如 `https://nav.futt.cn`），用于生成 canonical、sitemap.xml
+   - `SITE_URL`：你的开源版站点域名（如 `https://nav.futt.cn`），用于生成 canonical、sitemap.xml
 5. 绑定自定义域名，访问即上线；之后每次 `git push` 自动重新构建部署
 
 ### 方式二：CLI 手动部署
@@ -181,15 +181,50 @@ npm run preview    # 或 node scripts/serve.mjs，访问 http://localhost:4173/
 edgeone makers deploy --area global
 ```
 
-### 其他平台
+### 部署到任意对象存储 / 云存储（无需服务器）
 
-因为产物是纯静态文件（`dist/`），同样支持：
+本项目是**纯静态站点**，构建产物就是 `dist/` 目录下的一组文件 —— 没有后端、没有数据库、不需要 Node / PHP / Java 等任何运行时。**只要是一个能放静态文件的"空间"，就能运行本站**。
 
-- **Vercel**：Framework Preset 选 Other，Build Command `node scripts/build.mjs`，Output Directory `dist`
-- **Netlify**：Build Command `node scripts/build.mjs`，Publish Directory `dist`
-- **GitHub Pages**：`GITHUB_TOKEN=ghp_xxx node scripts/deploy-gh-pages.mjs` 自动构建并发布到 `gh-pages` 分支
-- **Cloudflare Pages**：发布 `dist/` 目录
-- **任意 Nginx / 对象存储静态托管**：上传 `dist/` 即可
+常见的云存储 / 静态托管平台（全部支持）：
+
+| 平台 | 服务名 | 部署要点 |
+|---|---|---|
+| 腾讯云 | **COS**（对象存储） | 开启「静态网站托管」，首页 `index.html`，可绑定 CDN + 自定义域名 |
+| 阿里云 | **OSS**（对象存储） | 开启「静态网站托管」，同上 |
+| 华为云 | **OBS** | 开启「静态网站托管」，同上 |
+| 七牛云 | **Kodo** | 空间公开读，绑定 CDN 域名 |
+| 又拍云 | 云存储 | 公开读 + 自定义域名 |
+| 火山引擎 | **TOS** | 开启静态网站托管 |
+| AWS | **S3** | 开启 Static website hosting |
+| Cloudflare | **R2 + Pages** | R2 免流量费，或直接传 Pages |
+| MinIO | 自建对象存储 | 内网 / 私有化部署同样适用 |
+| 代码托管静态站 | GitHub Pages / Gitee Pages / Cloudflare Pages / Vercel / Netlify | 关联仓库自动构建或上传 `dist/` |
+| 传统虚拟主机 / Nginx / NAS | Web 根目录 | 把 `dist/` 内容放进网站根目录即可 |
+
+**上传哪些文件即可运行：**
+
+1. 本地执行 `npm run build`，得到 `dist/` 构建产物
+2. 打开 `dist/` 目录，把里面**所有文件**原样上传到存储桶根目录 / 网站根目录：
+
+```
+dist/
+├── index.html        # 首页（必须）
+├── help.html         # 使用帮助页
+├── about.html        # 关于页
+├── privacy.html      # 隐私政策页
+├── favicon.svg       # 站点图标
+├── robots.txt        # 搜索引擎抓取规则
+├── sitemap.xml       # 站点地图（可选，配置 SITE_URL 后构建生成）
+└── assets/           # 样式 / 脚本 / 图标（含 css、js 子目录）
+```
+
+> 无需上传源码 `src/`、`package.json`、`node_modules` —— 这些是构建期文件，运行时零依赖。
+
+3. 在对象存储控制台开启「静态网站托管 / 静态网站」，首页设置为 `index.html`
+4. （推荐）绑定自定义域名并开启 HTTPS，访问即上线
+5. （可选）配置环境变量 `SITE_URL=https://你的域名` 后重新构建，可生成带固定域名的 canonical 与 `sitemap.xml`，利于 SEO
+
+**结论**：无论对象存储（COS / OSS / OBS / Kodo / S3 / R2）、CDN、虚拟主机、NAS 还是 GitHub Pages，只要能把静态文件放上去，本站就能运行 —— **完全开源、完全静态、不依赖其它任何服务**。
 
 ### NAS 应用中心打包（供其它用户一键安装）
 
@@ -222,7 +257,7 @@ edgeone makers deploy --area global
 未配置 `SITE_URL` 时 canonical 会取当前页面地址；配置后构建会生成固定域名版本并输出 sitemap.xml。
 
 **Q：可以直接去掉「正式版」引流链接吗？**
-可以。所有引流点（`officialUrl` 配置、`index.html` 广告位、`footer.html` CTA）改为自己的地址或删除即可。
+可以。顶部已不再放置引流按钮；剩余引流点（`officialUrl` 配置、`index.html` 广告位、`footer.html` CTA）改为自己的地址或删除即可。
 
 **Q：Node 版本有要求吗？**
 构建脚本使用原生 `fs` 模块，Node ≥ 18 即可；本地预览同样无需第三方依赖。

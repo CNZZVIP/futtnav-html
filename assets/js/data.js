@@ -1,5 +1,5 @@
 /* ============================================================
-   福天天导航 · 开源演示版 — 网站数据（data.js）
+   福天天导航 · 开源版 — 网站数据（data.js）
    ------------------------------------------------------------
    全站收录的所有网站链接都在此维护，按分组命名约定：
 
@@ -417,6 +417,8 @@ const NAVIGATION_DATA = {
   ],
   YL_a: [
     { name: "福天天导航", url: "https://hao.futt.cn" },
-    { name: "项目地址", url: "https://gitee.com/hiqw/futtnav-html" }
+    { name: "Gitee 开源", url: "https://gitee.com/hiqw/futtnav-html" },
+    { name: "GitHub 开源", url: "https://github.com/CNZZVIP/futtnav-html" },
+    { name: "CNB 开源", url: "https://cnb.cool/futtcn/futtnav-html" }
   ]
 };
