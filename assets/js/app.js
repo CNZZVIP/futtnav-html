@@ -564,7 +564,7 @@ class BadgesManager {
       richresults: 'https://search.google.com/test/rich-results?url=' + site,
       pagespeed: 'https://pagespeed.web.dev/analysis?url=' + site
     };
-    document.querySelectorAll('.footer-badges .badge').forEach(function (b) {
+    document.querySelectorAll('.footer-badges a[data-badge]').forEach(function (b) {
       const u = links[b.dataset.badge];
       if (u) b.href = u;
     });
