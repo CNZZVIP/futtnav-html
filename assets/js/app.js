@@ -36,9 +36,15 @@ const Utils = {
   showToast(m) {
     const t = document.createElement('div');
     t.textContent = m;
-    t.style.cssText = `position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
-      background:var(--card);color:var(--text);padding:12px 24px;border-radius:var(--radius);
-      box-shadow:var(--shadow-lg);z-index:10000;border:1px solid var(--border)`;
+    // 提示显示在右悬浮栏旁边（桌面端右侧垂直居中），而非屏幕最底部
+    const mobile = window.innerWidth <= 768;
+    t.style.cssText = mobile
+      ? `position:fixed;right:1rem;bottom:6rem;max-width:calc(100vw - 2rem);
+         background:var(--card);color:var(--text);padding:12px 24px;border-radius:var(--radius);
+         box-shadow:var(--shadow-lg);z-index:10000;border:1px solid var(--border);text-align:center`
+      : `position:fixed;right:5.5rem;top:50%;transform:translateY(-50%);max-width:60vw;
+         background:var(--card);color:var(--text);padding:12px 24px;border-radius:var(--radius);
+         box-shadow:var(--shadow-lg);z-index:10000;border:1px solid var(--border);text-align:center`;
     document.body.appendChild(t);
     setTimeout(() => t.remove(), 2000);
   },

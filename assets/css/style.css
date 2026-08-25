@@ -772,6 +772,14 @@ footer { padding: 3rem 0 1.5rem }
   transition: var(--transition)
 }
 .icp-link:hover { color: var(--text) }
+/* 版权区链接：保持正文灰色（不随全局 a 变蓝），加细下划线提示可点击 */
+.copyright a {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--text-secondary) 40%, transparent);
+  text-underline-offset: 2px
+}
+.copyright a:hover { color: var(--text) }
 
 /* ============================================================
    站点质量认证徽章（页脚最底部）
@@ -1045,6 +1053,7 @@ footer { padding: 3rem 0 1.5rem }
   .page-title { font-size: 2rem }
   .prose-card { padding: 1.5rem }
   .footer-cta { justify-content: center; text-align: center }
+  .footer-badges { gap: .25rem }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .nav-content { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)) }
