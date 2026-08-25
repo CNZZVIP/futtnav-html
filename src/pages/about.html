@@ -37,6 +37,25 @@
     </section>
 
     <section class="content-section">
+      <h2 class="section-title"><svg class="icon"><use xlink:href="#icon-fenlei"></use></svg>完全开源 · 随处可部署</h2>
+      <div class="prose-card">
+        <p>本项目是<strong>纯静态站点</strong>：没有后端、没有数据库、不需要任何运行时（Node / PHP / Java 均不需要）。构建产物只有一组静态文件，<strong>任何能托管静态文件的空间都能直接运行</strong>，例如：</p>
+        <ul>
+          <li><strong>云存储 / 对象存储</strong>：腾讯云 COS、阿里云 OSS、华为云 OBS、七牛云 Kodo、又拍云、火山引擎 TOS、AWS S3、Cloudflare R2、MinIO（自建）；</li>
+          <li><strong>静态托管</strong>：Vercel、Netlify、Cloudflare Pages、GitHub Pages、Gitee Pages、腾讯云 EdgeOne Pages；</li>
+          <li><strong>服务器 / NAS</strong>：任意 Nginx / Apache 虚拟主机，群晖 / 飞牛等 NAS 的 Web 根目录。</li>
+        </ul>
+        <div class="highlight-box">
+          <p><strong>部署只需两步：</strong><br>
+          ① 本地执行 <code>npm run build</code> 生成 <code>dist/</code> 构建产物；<br>
+          ② 把 <code>dist/</code> 目录下的全部文件（index.html、help.html、about.html、privacy.html、favicon.svg、assets/ 等）上传到存储空间根目录，开启「静态网站托管」即可访问。<br>
+          不需要源码、不需要 node_modules、不需要任何配置文件，<strong>完全独立运行</strong>。</p>
+        </div>
+        <p>更详细的部署教程（含各平台操作步骤）见项目 <a href="https://gitee.com/hiqw/futtnav-html" target="_blank" rel="noopener">README 文档</a>。</p>
+      </div>
+    </section>
+
+    <section class="content-section">
       <h2 class="section-title"><svg class="icon"><use xlink:href="#icon-check"></use></svg>项目特点</h2>
       <div class="info-grid">
         <div class="info-item">
