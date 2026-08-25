@@ -229,3 +229,36 @@ edgeone makers deploy --area global
 ---
 
 **福天天导航 · 正式版**：[https://hao.futt.cn](https://hao.futt.cn)
+
+## 🏅 项目质量
+
+### 仓库
+
+[![Gitee stars](https://gitee.com/hiqw/futtnav-html/badge/star.svg?theme=white)](https://gitee.com/hiqw/futtnav-html)
+[![Gitee forks](https://gitee.com/hiqw/futtnav-html/badge/fork.svg?theme=white)](https://gitee.com/hiqw/futtnav-html)
+[![License: MIT](https://img.shields.io/badge/License-MIT-1B9E55?style=for-the-badge)](LICENSE)
+[![HTML5](https://img.shields.io/badge/HTML5-5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/zh-CN/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/zh-CN/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
+[![EdgeOne](https://img.shields.io/badge/EdgeOne-Makers-006EFF?style=for-the-badge&logo=tencentqq&logoColor=white)](https://console.cloud.tencent.com/edgeone)
+
+### 在线验证（[nav.futt.cn](https://nav.futt.cn)）
+
+[![HTML5 Valid](https://img.shields.io/badge/W3C-HTML5-1572B6?style=for-the-badge&logo=html5&logoColor=white)](https://validator.w3.org/nu/?doc=nav.futt.cn)
+[![CSS3 Valid](https://img.shields.io/badge/W3C-CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://jigsaw.w3.org/css-validator/validator?uri=nav.futt.cn)
+[![SSL TLS A](https://img.shields.io/badge/SSL_TLS-A-00B86B?style=for-the-badge&logo=letsencrypt&logoColor=white)](https://www.ssllabs.com/ssltest/analyze.html?d=nav.futt.cn)
+[![Security Headers A](https://img.shields.io/badge/Security_Headers-A-00B86B?style=for-the-badge&logo=securityscorecard&logoColor=white)](https://securityheaders.com/?q=nav.futt.cn)
+[![HSTS Preload](https://img.shields.io/badge/HSTS-PRELOAD-00B86B?style=for-the-badge&logo=https&logoColor=white)](https://hstspreload.org/?domain=nav.futt.cn)
+[![Rich Results](https://img.shields.io/badge/Rich-Results-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://search.google.com/test/rich-results?url=nav.futt.cn)
+[![PageSpeed CWV](https://img.shields.io/badge/PageSpeed-CWV-00B86B?style=for-the-badge&logo=googlechrome&logoColor=white)](https://pagespeed.web.dev/analysis?url=nav.futt.cn)
+
+### 协议 & 合规
+
+- **协议**：MIT，可自由使用、修改、商用，需保留版权声明（`LICENSE`）
+- **零依赖**：原生 HTML / CSS / JavaScript，无任何第三方运行时或构建依赖
+- **无追踪**：页面无第三方统计脚本；站外链接统一追加 `?source=hao.futt.cn` 便于统计引流
+- **安全默认**：所有外链使用 HTTPS；支持自定义 `SITE_URL` 生成 canonical / sitemap.xml
+
+---
+
+🐛 Bug 反馈 / ✨ 功能建议：[Gitee Issues](https://gitee.com/hiqw/futtnav-html/issues) · 📧 联系：5064895@qq.com
