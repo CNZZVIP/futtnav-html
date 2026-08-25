@@ -1,0 +1,11 @@
+services:
+  futtnav:
+    image: docker.io/nginxinc/nginx-unprivileged:1.27-alpine
+    container_name: futtnav
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./www:/usr/share/nginx/html:ro
+    environment:
+      - TZ=Asia/Shanghai
+    restart: unless-stopped

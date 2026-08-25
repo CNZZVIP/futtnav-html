@@ -1,0 +1,25 @@
+{
+    "port-config": {
+        "protocol-file": "FuttNav.sc"
+    },
+    "data-share": {
+        "shares": [
+            {
+                "name": "FuttNav",
+                "permission": {
+                    "rw": [
+                        "futtnav"
+                    ]
+                }
+            }
+        ]
+    },
+    "docker-project": {
+        "projects": [
+            {
+                "name": "futtnav",
+                "path": "docker"
+            }
+        ]
+    }
+}

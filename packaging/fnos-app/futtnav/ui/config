@@ -1,0 +1,15 @@
+{
+    ".url": {
+        "futtnav.Application":
+        {
+            "title": "福天天导航",
+            "desc": "福天天导航 - 安全实用高效的网址导航",
+            "icon": "images/{0}.png",
+            "type": "url",
+            "port": "8080",
+            "protocol": "http",
+            "url": "/",
+            "allUsers": true
+        }
+    }
+}
