@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="101" height="20" viewBox="0 0 101 20" role="img" aria-label="HSTS: PRELOAD">
+  <title>HSTS 强制 HTTPS：preload 指令已启用</title>
+  <clipPath id="c"><rect width="101" height="20" rx="3"/></clipPath>
+  <g clip-path="url(#c)">
+    <rect width="40" height="20" fill="#555"/>
+    <rect x="40" width="61" height="20" fill="#4c1"/>
+  </g>
+  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11">
+    <text x="20" y="14">HSTS</text>
+    <text x="70" y="14">PRELOAD</text>
+  </g>
+</svg>
