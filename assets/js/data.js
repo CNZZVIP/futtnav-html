@@ -322,7 +322,8 @@ const NAVIGATION_DATA = {
     { name: "阿里云盘", url: "https://www.alipan.com" },
     { name: "夸克网盘", url: "https://pan.quark.cn", icon: "quarkpan" },
     { name: "Yandex", url: "https://yandex.com" },
-    { name: "实验楼", url: "https://www.shiyanlou.com" }
+    { name: "实验楼", url: "https://www.shiyanlou.com" },
+    { name: "资料星球 · 学习与考试", url: "https://resources.packscena.com/categories/learning/" }
   ],
   FL_i: [
     { name: "BOSS直聘", url: "https://www.bosszhipin.com" },
